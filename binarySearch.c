@@ -1,6 +1,8 @@
+#define _GNU_SOURCE
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 #include "macros.h"
 
 int binSearch(int *arr, int searchNum, int size);
@@ -17,9 +19,8 @@ int main() {
     char *eachNum = NULL;
     char *tempNum = NULL;
     size_t lineCap;
-    ssize_t lineLen; 
 
-    lineLen = getline(&buf, &lineCap, fp);
+    getline(&buf, &lineCap, fp);
 
     int i = 0, j = 0, numCount = 0;
     int *arr = NULL;

@@ -1,5 +1,3 @@
-#include <cstdio>
-#include <cstdlib>
 #include <stdio.h>
 #include "macros.h"
 
@@ -43,7 +41,7 @@ int main() {
     int len, totalLen = 0;
 
     for (i = 0; i < n; i++) {
-        len = snprintf(p, sizeof(p), "%d ", arr[i]);
+        len = snprintf(p, (n * 3 + n) - totalLen, "%d ", arr[i]);
         p += len;
         totalLen += len;
     }
